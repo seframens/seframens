@@ -2,9 +2,9 @@
 - 👀 I’m interested in programming 
 - 🌱 I’m currently learning C#
 - 💞️ I’m looking to collaborate on 1С Предприятие
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+- 📫 How to reach me Shprot
+- 😄 Pronouns: Good
+- ⚡ Fun fact: Im a programmist
 
 <!---
 seframens/seframens is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
