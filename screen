@@ -1,0 +1,116 @@
+package screens
+
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.unit.sp
+
+@Composable
+fun authorizationScreen(onNavigateToRegister: () -> Unit, onNavigateToProfile: () -> Unit){
+    val loginMessage = remember{mutableStateOf("")}
+    val passwordMessage = remember{mutableStateOf("")}
+
+    Text("Authorization")
+
+    Text("Login", fontSize = 28.sp)
+    TextField(
+        loginMessage.value,
+        onValueChange = {newText -> loginMessage.value = newText},
+    )
+
+    Text("Password", fontSize = 28.sp)
+    TextField(
+        passwordMessage.value,
+        onValueChange = {newText -> passwordMessage.value = newText}
+    )
+
+    Row {
+        Button(onClick = {
+            onNavigateToProfile()
+        }){
+            Text("Enter")
+        }
+
+        Button(onClick = {
+            onNavigateToRegister()
+        }){
+            Text("Register")
+        }
+    }
+}
+
+@Composable
+fun registrationScreen(onNavigateToAuthorization: () -> Unit){
+    Text("Регистраиця")
+
+    val loginMessage = remember{mutableStateOf("")}
+    val passwordMessage = remember{mutableStateOf("")}
+    val confirmPasswordMessage = remember{mutableStateOf("")}
+    val phoneNumberMessage = remember{mutableStateOf("")}
+    val emailMessage = remember{mutableStateOf("")}
+    val ageMessage = remember{mutableStateOf("")}
+    val countryMessage = remember{mutableStateOf("")}
+
+    Text("Login", fontSize = 28.sp)
+    TextField(
+        loginMessage.value,
+        onValueChange = {newText -> loginMessage.value = newText},
+    )
+
+    Text("Password", fontSize = 28.sp)
+    TextField(
+        passwordMessage.value,
+        onValueChange = {newText -> passwordMessage.value = newText},
+    )
+
+    Text("Confirm password", fontSize = 28.sp)
+    TextField(
+        confirmPasswordMessage.value,
+        onValueChange = {newText -> confirmPasswordMessage.value = newText},
+    )
+
+    Text("Phone number", fontSize = 28.sp)
+    TextField(
+        phoneNumberMessage.value,
+        onValueChange = {newText -> phoneNumberMessage.value = newText},
+    )
+
+    Text("Email", fontSize = 28.sp)
+    TextField(
+        emailMessage.value,
+        onValueChange = {newText -> emailMessage.value = newText},
+    )
+
+    Text("Age", fontSize = 28.sp)
+    TextField(
+        ageMessage.value,
+        onValueChange = {newText -> ageMessage.value = newText},
+    )
+
+    Text("Country", fontSize = 28.sp)
+    TextField(
+        countryMessage.value,
+        onValueChange = {newText -> countryMessage.value = newText},
+    )
+
+    Button(onClick = {
+        onNavigateToAuthorization()
+    }){
+        Text("Ok")
+    }
+}
+
+@Composable
+fun profileScreen(onNavigateToAuthorization: () -> Unit){
+    Text("Твой профиль")
+    Text("Типа инфа о себе")
+    Button(onClick = {
+        onNavigateToAuthorization()
+    }){
+        Text("Back")
+    }
+}
